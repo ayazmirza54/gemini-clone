@@ -61,7 +61,7 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className='m-4 p-4'>
+      <div className='m-2 p-2'>
   <div className='flex justify-end items-center'>
     <ModeToggle />
   </div>
@@ -73,7 +73,7 @@ function App() {
       </div>
     </h1>
   </div>
-  <div className='flex flex-col lg:flex-row p-4 m-4 justify-center items-center'>
+  <div className='flex flex-col lg:flex-row p-2 m-2 justify-center items-center'>
     <div className="lg:w-3/4 w-full h-full">
       <Textarea
         placeholder="Type your prompt here."
@@ -93,7 +93,7 @@ function App() {
       {error && <div className='error'>{error}</div>}
      
     
-      <div className='search-result px-8 mx-8 flex flex-col justify-start items-start'>
+      <div className='search-result px-4 mx-4 flex flex-col justify-start items-start'>
   {chathistory.map((chatItem, index) => (
     <div key={index} className={`chat-item ${chatItem.role === 'user' ? 'user-message' : 'model-message'}`}>
       <div className='avatar flex flex-row justify-start items-center'>
@@ -101,7 +101,6 @@ function App() {
         <p className='message-text'>{chatItem.role}</p>
       </div>
       <div className='message-container'>
-        
         <div className='answer'>
           {chatItem.role === 'user' ? (
             <p>{chatItem.parts}</p>
