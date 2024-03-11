@@ -51,7 +51,9 @@ const PORT = 8000;
 const MODEL_NAME = "gemini-1.0-pro";
 const API_KEY = process.env.API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
-
+app.get("/", (req, res) => {
+  res.send("AI server has been started");
+});
 app.post("/gemini", async (req, res) => {
   try {
     const model = genAI.getGenerativeModel({ model: MODEL_NAME });

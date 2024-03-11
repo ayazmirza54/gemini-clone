@@ -40,7 +40,7 @@ function App() {
         }
       };
 
-      const response = await fetch('http://localhost:8000/gemini', options);
+      const response = await fetch('https://gemini-clone.onrender.com/gemini', options);
       const data = await response.text();
 
       setChatHistory(oldChatHistory => [
