@@ -65,8 +65,8 @@ app.post("/gemini", async (req, res) => {
     const result = await chat.sendMessage(msg);
     const response = await result.response;
     const text = await response.text();
-    console.log(msg);
-    console.log(text);
+    console.log("User : " + msg);
+    console.log("Model : " + text);
     res.send(text);
   } catch (error) {
     console.error(error);
