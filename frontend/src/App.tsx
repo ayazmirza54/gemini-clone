@@ -45,8 +45,8 @@ function App() {
 
       setChatHistory(oldChatHistory => [
         ...oldChatHistory,
-        { role: "user :", parts: [value], avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=Bob' }, // Add user avatar URL
-        { role: "AI buudy :", parts: [data], avatar: 'https://api.dicebear.com/7.x/bottts/svg' }  // Add model avatar URL
+        { role: "user", parts: [value], avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=Bob' }, // Add user avatar URL
+        { role: "model", parts: [data], avatar: 'https://api.dicebear.com/7.x/bottts/svg' }  // Add model avatar URL
       ]);
 
       setValue("");
@@ -95,7 +95,7 @@ function App() {
     
       <div className='search-result px-8 mx-8 flex flex-col justify-start items-start'>
   {chathistory.map((chatItem, index) => (
-    <div key={index} className={`chat-item ${chatItem.role === 'user :' ? 'user-message' : 'model-message'}`}>
+    <div key={index} className={`chat-item ${chatItem.role === 'user' ? 'user-message' : 'model-message'}`}>
       <div className='avatar flex flex-row justify-start items-center'>
         <img src={chatItem.avatar} alt={`${chatItem.role} avatar`} className="avatar-image" />
         <p className='message-text'>{chatItem.role}</p>
